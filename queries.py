@@ -74,21 +74,53 @@ def is_dead():
 
 def bag_itens(player):
     query = '''
-    query{
-      profiles(discordId: "%s"){
-        edges{
-          node{
-            bag{
-              edges{
-                node{
-                  id
-                  name
-                  description
-                }
+    query profiles{
+  profiles{
+    edges{
+      node{
+        id
+        discordId:"%s"
+        expEarned
+        isDead
+        life
+        actualPosition
+        actualZone{
+          zoneReference
+        }
+        actualArea{
+          areaReference
+          areaRowMaxSize
+          areaColumnMaxSize
+        }
+        bag{
+          edges{
+            node{
+              item{
+                name
               }
+              stock
             }
           }
         }
       }
-    }''' % player
+    }
+  }
+}''' % player
+    return gql(query)
+
+
+def especific_item(item):
+    query = '''
+   query{
+  items(name: "%s"){
+    edges{
+      node{
+        name
+        description
+        weight
+      }
+    }
+  }
+}
+    ''' % item
     return gql(query)

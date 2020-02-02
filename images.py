@@ -1,0 +1,3 @@
+def imagens(item):
+    imagem = {'Água limpa':'https://www.imagemhost.com.br/images/2020/02/02/Agua-limpa.th.png', 'Alumínio':'https://www.imagemhost.com.br/images/2020/02/02/Barra-de-aluminio.th.png', 'Carvão':'', 'Cipó':'', 'Cipó Resistente':'https://www.imagemhost.com.br/images/2020/02/02/Lanca.th.png', 'Cobre':'https://www.imagemhost.com.br/images/2020/02/02/Barra-de-cobre.th.png', 'Estanho':'https://www.imagemhost.com.br/images/2020/02/02/ingot_01e.th.png', 'Ferro':'https://www.imagemhost.com.br/images/2020/02/02/Barra-de-ferro.th.png', 'Madeira':'', 'Ouro':'https://www.imagemhost.com.br/images/2020/02/02/Barra-de-ouro.th.png'}
+    return imagem.get(item)
