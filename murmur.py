@@ -126,7 +126,7 @@ async def ajuda(bot):
 
 ```Para verificar onde é sua atual localização no mapa basta comandar: m/ponto
 Para verificar as informações de seu inventário apenas comande: m/carga
-Para vereficar um item específico faça: m/item NomeDoItem
+Para vereficar um item específico faça: m/item NomeDoItem privado
 Para verificar os jogadores que estão mortos comande: m/mortos
 Para pergar os itens do mapa basta comandar: m/pegar NomeDoItem
 Para verificar se tem um item próximo use o comando: m/mapear```

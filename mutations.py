@@ -29,26 +29,5 @@ def catch_item(item):
 
 
 def drop_item():
-    mutation = '''
-    mutation{
-  removeItemFromBag(input: {
-    discordId: "baz"
-    itemName: "Silvertape"
-    qt: 4
-  }){
-    profile{
-      bag{
-        edges{
-          node{
-            item{
-              name
-            }
-            stock
-          }
-        }
-      }
-    }
-  }
-}
-    '''
-    return gql(mutation)
+    mutation = ''
+    return mutation
