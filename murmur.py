@@ -90,17 +90,17 @@ async def mapear(bot):
 
 
 @client.command()
-async def item(ctx, *usr):
+async def item(bot, *usr):
     """
     Mostra as informações dos itens
     """
-    player = '<@!' + str(ctx.author.id) + '>'
+    player = '<@!' + str(bot.author.id) + '>'
     payload = especific_item(' '.join(usr))
     api_client = get_gql_client(API_URL)
     response = api_client.execute(payload)
     img = imagens(' '.join(usr))
     if not usr:
-        return await ctx.send(f'{player} por favor informe o nome do item que deseja as informações!')
+        return await bot.send(f'{player} por favor informe o nome do item que deseja as informações!')
     else:
         edges = response['items']['edges']
         node = edges[0].get('node') if edges else None
@@ -114,7 +114,7 @@ async def item(ctx, *usr):
         embed.add_field(name='Peso', value=f'{peso}', inline=False)
 
         desciption = f'{player} as informações sobre item são:'
-        return await ctx.send(desciption, embed=embed)
+        return await bot.send(desciption, embed=embed)
 
 
 @client.command()
@@ -133,3 +133,14 @@ Para verificar se tem um item próximo use o comando: m/mapear```
 
 
 ''')
+
+
+@client.command()
+async def teste(bot):
+    chat = bot.channel.id
+    player = '<@!' + str(bot.author.id) + '>'
+
+    if chat == 634589827907584009:
+        return await bot.send(f"{player}, chama no pv que o pai tá on!")
+    return await bot.send("I'm a suggar dady!")
+    
