@@ -124,3 +124,30 @@ def especific_item(item):
 }
     ''' % item
     return gql(query)
+
+
+def bot_profile(name):
+  query = '''
+  query{
+  botProfiles(botName:"%s"){
+    edges{
+      node{
+        botName
+      }
+    }
+  }
+}
+  ''' % name
+  return gql(query)
+
+def bot_history(name):
+  query = '''query{
+  botProfiles(botName:"%s"){
+    edges{
+      node{
+        botHistory
+      }
+    }
+  }
+} ''' % name
+  return gql(query)

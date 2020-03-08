@@ -135,6 +135,10 @@ Para verificar se tem um item próximo use o comando: m/mapear```
 ''')
 
 
+#################################
+# Área de testes !!!! Caution !!#
+#################################
+
 @client.command()
 async def teste(bot):
     chat = bot.channel.id
@@ -143,4 +147,24 @@ async def teste(bot):
     if chat == 634589827907584009:
         return await bot.send(f"{player}, chama no pv que o pai tá on!")
     return await bot.send("I'm a suggar dady!")
-    
+
+
+
+@client.command()
+async def botinfo(bot, usr):
+    chat = bot.channel.id
+    player = '<@!' + str(bot.author.id) + '>'
+
+    api_client = get_gql_client(API_URL)
+    payload = bot_history(usr)
+    response = api_client.execute(payload)
+    print(response)
+
+    if chat == 634589827907584009:
+        return await bot.send(f'{player}, não podemos revelar nossas informações pessoais perto destes bastardos!')
+    elif not usr:
+        return await bot.send(f"{player}, não me incomode com futilidades, traga me algo de verdade para fazer!")
+    else:
+        
+        return await bot.send(f'{history}')
+
