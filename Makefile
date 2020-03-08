@@ -3,5 +3,5 @@ run:
 
 
 migrate:
-	python manage.py mmakemigrations
+	python manage.py makemigrations
 	python manage.py migrate
